@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.80.0" />
+	<title>Capotopedia</title>
+	<link rel="canonical" href="https://based.cooking/">
+	<link rel='alternate' type='application/rss+xml' title="Based Cooking RSS" href='/index.xml'>
+	<link rel="icon" href="/favicon.svg">
+	<meta name="description" content="A enciclopedia oficial dos Capotadores de Corsa">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta charset="utf-8">
+  <style>
+    body {
+	background: #151515 ;
+	color: navajowhite;
+	max-width: 850px ;
+	margin: auto ;
+	padding: 0 16px ;
+	margin-bottom: 500px ;
+	scrollbar-color: gray #151515;
+	font-family: sans-serif ;
+}
+
+::-webkit-scrollbar {
+	width: .66vw;
+	background-color: #151515;
+}
+::-webkit-scrollbar-thumb {
+	background-color: gray;
+	border-radius: 5px;
+}
+
+a {
+	color: gold ;
+	text-decoration: none ;
+}
+
+#tagcloud {
+	list-style: none ;
+	text-align: center ;
+	padding: 0 ;
+}
+
+#tagcloud li {
+	display: inline-block ;
+}
+
+#tagcloud a {
+	margin: .1em .25em ;
+}
+
+a:visited {
+	color: darkgoldenrod ;
+}
+
+a:hover {
+	color: beige ;
+	text-decoration: underline;
+}
+
+h1 {
+	border-style: solid ;
+	border-width: 0px 0px 2px 0px ;
+	text-align: center ;
+}
+
+h2 {
+	color: tomato ;
+	text-align: center ;
+}
+
+footer {
+	margin-top: 3em ;
+	text-align: center ;
+	border-style: solid ;
+	border-width: 2px 0px 0px 0px ;
+	padding: 1em ;
+}
+
+img {
+	max-width: 90% ;
+	max-height: 400px ;
+	margin: auto ;
+	display: block ;
+}
+
+code {
+	overflow-wrap: break-word ;
+	color: lime ;
+}
+
+.taglist {
+	text-align: center ;
+	margin-bottom: 2em ;
+	margin-top: 2em ;
+}
+
+img[alt="BTC Logo"],
+img[alt="ETH Logo"],
+img[alt="XMR Logo"] {
+	max-width: 1em ;
+	max-height: 1em ;
+	display: inline ;
+}
+
+@media (pointer: coarse) {
+	li > a {
+	    display: inline-block;
+		padding: 0.2em 0;
+	}
+}
+
+@media print {
+	a[href] {
+		text-decoration: none ;
+		color: black ;
+	}
+
+	footer,.taglist { display: none ; }
+
+	body {
+		margin: 0;
+	}
+
+
+}
+
+.older-article {
+	display: none ;
+}
+
+.hidden {
+	display: none !important ;
+}
+
+#artlist {
+	font-size: large ;
+}
+
+#artlist li {
+	padding: .25em ;
+}
+
+@media (min-width: 55em) {
+	#artlist { column-count: 2 ;}
+}
+
+@media (min-width: 100em) {
+	#artlist { column-count: 3 ;}
+}
+
+
+input#search {
+  all: unset;
+  background: #222;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.search {
+  width: 400px;
+  max-width: 85vw;
+  position: relative;
+  margin: 0.5rem auto 1.2rem;
+  display: flex;
+}
+
+button#clear-search {
+  all: unset;
+  position: absolute;
+  right: 4px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  color: #888;
+  cursor: pointer;
+  transition: color 180ms ease-in-out;
+}
+button#clear-search:hover {
+  color: #eee;
+}
+
+
+.matched-recipe {
+	font-size: x-large ;
+	display: list-item !important ;
+}
+
+.list-searched {
+	column-count: 1 !important ;
+	list-style: decimal ;
+	max-width: 600px ;
+	margin: auto ;
+}
+
+#tag_alcohol:before { content: "🍸" ;}
+#tag_american:before { content: "🇺🇸" ; }
+#tag_argentinian:before { content: "🇦🇷" ; }
+#tag_asian:before { content: "🥢" ; }
+#tag_australian:before { content: "🇦🇺" ;}
+#tag_austrian:before { content: "🇦🇹" ;}
+#tag_bacon:before { content: "🥓" ; }
+#tag_beans:before { content: "🫘" ; }
+#tag_beef:before { content: "🐄" ; }
+#tag_belgian:before { content: "🇧🇪" ; }
+#tag_brazilian:before { content: "🇧🇷" ; }
+#tag_bread:before { content: "🍞" ;}
+#tag_breakfast:before { content: "🌅" ;}
+#tag_broccoli:before { content: "🥦" ;}
+#tag_cake:before { content: "🍰" ; }
+#tag_cheese:before { content: "🧀" ; }
+#tag_chicken:before { content: "🐔" ;}
+#tag_chinese:before { content: "🐉" ; }
+#tag_chocolate:before { content: "🍫" ; }
+#tag_cookies:before { content: "🍪" ;}
+#tag_corn:before { content: "🌽" ;}
+#tag_curry:before { content: "🍛" ; }
+#tag_dessert:before { content: "🍮" ; }
+#tag_dominican:before { content: "🇩🇴" ;}
+#tag_drink:before { content: "🍹" ;}
+#tag_duck:before { content: "🦆" ; }
+#tag_dumpling:before { content: "🥟" ;}
+#tag_dutch:before { content: "🇳🇱" ;}
+#tag_easter:before { content: "✝️" ; }
+#tag_eggs:before { content: "🥚" ; }
+#tag_english:before { content: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" ; }
+#tag_fasting:before { content: "☦️" ; }
+#tag_filipino:before { content: "🇵🇭" ; }
+#tag_fish:before { content: "🐟" ; }
+#tag_french:before { content: "🇫🇷" ; }
+#tag_fruit:before { content: "🍇" ; }
+#tag_german:before { content: "🇩🇪" ; }
+#tag_greek:before { content: "🇬🇷" ; }
+#tag_indian:before { content: "🇮🇳" ; }
+#tag_irish:before { content: "🇮🇪" ; }
+#tag_israeli:before { content: "🇮🇱" ; }
+#tag_italian:before { content: "🇮🇹" ; }
+#tag_japanese:before { content: "🇯🇵" ; }
+#tag_lebanese:before { content: "🇱🇧" ; }
+#tag_lemons:before { content: "🍋" ;}
+#tag_liquour:before { content: "🥃" ;}
+#tag_lunch:before { content: "🍱" ; }
+#tag_mediterranean:before { content: "🫒" ; }
+#tag_mexican:before { content: "🇲🇽" ; }
+#tag_milk:before { content: "🥛" ; }
+#tag_mushrooms:before { content: "🍄" ;}
+#tag_pancake:before { content: "🥞" ; }
+#tag_pasta:before { content: "🍝" ;}
+#tag_pastry:before { content: "🧁" ;}
+#tag_peruvian:before { content: "🇵🇪" ;}
+#tag_pie:before { content: "🥧" ;}
+#tag_pizza:before { content: "🍕" ; }
+#tag_polish:before { content: "🇵🇱" ;}
+#tag_pork:before { content: "🐖" ;}
+#tag_portuguese:before { content: "🇵🇹" ;}
+#tag_potato:before { content: "🥔" ; }
+#tag_quebec:before { content: "⚜️" ; }
+#tag_quick:before { content: "🏃" ; }
+#tag_raw:before { content: "🍖" ;}
+#tag_rice:before { content: "🍚" ; }
+#tag_russian:before { content: "🇷🇺" ;}
+#tag_salad:before { content: "🥗" ;}
+#tag_sandwich:before { content: "🥪" ;}
+#tag_seafood:before { content: "🦐" ; }
+#tag_soup:before { content: "🍜" ;}
+#tag_sourdough:before { content: "🥖" ;}
+#tag_southwest:before { content: "🤠" ; }
+#tag_spanish:before { content: "🇪🇸" ; }
+#tag_spice:before { content: "🧂" ; }
+#tag_spicy:before { content: "🌶️" ; }
+#tag_spread:before { content: "🧈" ; }
+#tag_steak:before { content: "🥩" ; }
+#tag_stew:before { content: "🍲" ; }
+#tag_swedish:before { content: "🇸🇪" ; }
+#tag_sweet:before { content: "🍯" ; }
+#tag_swiss:before { content: "🇨🇭" ; }
+#tag_thai:before { content: "🇹🇭" ;}
+#tag_tomato:before { content: "🍅" ;}
+#tag_turkey:before { content: "🦃" ; }
+#tag_turkish:before { content: "🇹🇷" ; }
+#tag_ukrainian:before { content: "🇺🇦" ; }
+#tag_vietnamese:before { content: "🇻🇳" ; }
+#tag_wine:before { content: "🍷" ; }
+
+.cryptocontainer {
+    display: flex ;
+    flex-wrap: wrap ;
+    justify-content: center ;
+}
+.cryptoinfo {
+    max-width: 350px ;
+    text-align: center ;
+    padding-left: 10px ;
+    padding-right: 10px ;
+}
+.cryptoinfo code {
+	font-size: small ;
+	overflow-wrap: break-word ;
+}
+.qr {
+    max-height: 150px; ;
+}
+
+.js-only { display: none ; }
+
+  </style>
+</head>
+<body>
+<main>
+<header><h1>🐒 Capotopedia 🐒</h1></header>
+<article>
+<h2 id="what-do-you-want-to-cook">Sobre o que voce quer aprender?</h2>
+<div class="search js-only">
+  <input type="text" id="search" placeholder="Pesquise um artigo...">
+  <button id="clear-search">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Backspace</title><path d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"></path></svg>
+  </button>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  for (e of document.getElementsByClassName("js-only")) {
+    e.classList.remove("js-only");
+  }
+
+  const recipes = document.querySelectorAll("#artlist li");
+  const search = document.getElementById("search");
+  const oldheading = document.getElementById("newest-recipes");
+  const clearSearch = document.getElementById("clear-search");
+  const artlist = document.getElementById("artlist");
+
+  search.addEventListener("input", () => {
+    // grab search input value
+    const searchText = search.value.toLowerCase().trim().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+    const searchTerms = searchText.split(" ");
+    const hasFilter = searchText.length > 0;
+
+    artlist.classList.toggle("list-searched", hasFilter);
+    oldheading.classList.toggle("hidden", hasFilter);
+
+    // for each recipe hide all but matched
+    recipes.forEach(recipe => {
+      const searchString = `${recipe.textContent} ${recipe.dataset.tags}`.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+      const isMatch = searchTerms.every(term => searchString.includes(term));
+
+      recipe.hidden = !isMatch;
+      recipe.classList.toggle("matched-recipe", hasFilter && isMatch);
+    })
+  })
+
+  clearSearch.addEventListener("click", () => {
+    search.value = "";
+    recipes.forEach(recipe => {
+      recipe.hidden = false;
+      recipe.classList.remove("matched-recipe");
+    })
+
+    artlist.classList.remove("list-searched");
+    oldheading.classList.remove("hidden");
+  })
+})
+// @license-end
+</script>
+<h2 id="newest-recipes">Artigos</h2>
+<ul id=artlist>
+<li><a href="pedro-bollela.html">Pedro Bollela</a></li>
+<li data-tags="[salad greek mediterranean tomato]" ><a href="#">Bollela Macaco</a></li>
+<li data-tags="[soup fasting tomato]" ><a href="#">O incidente da Rua Augusta</a></li>
+<li data-tags="[soup french tomato]" ><a href="#">Adalzilio Machado</a></li>
+<li data-tags="[indian curry tomato vegetables]" ><a href="rafael-carvalho.html">Rafael Carvalho</a></li>
+<li data-tags="[shrimp chicken cajun tomato]" ><a href="#">Nude em PDF(musica)</a></li>
+<li data-tags="[spinach rice]" ><a href="/home/rodya/Desktop/Capotopedia/rodrigo-navegantes.html">Rodrigo Navegantes</a></li>
+<li data-tags="[beef oven italian]" ><a href="vinicius-burigo.html">Vinicius Burigo</a></li>
+<li data-tags="[tunisian]" ><a href="#">Vin Burigo</a></li>
+<li data-tags="[basic spread quick russian soup]" ><a href="#">Jair Bolsonaro</a></li>
+<li data-tags="[italian pasta quick seafood shrimp garlic]" ><a href="#">Direct Game Hunter(Dario)</a></li>
+<li data-tags="[beef stew english]" ><a href="#">Homem Tradicional</a></li>
+<li data-tags="[swedish quick]" ><a href="#">Viagem de Kombi a Porto Seguro</a></li>
+<li data-tags="[pizza sauce italian]" ><a href="#">Renatao de 4</a></li>
+
+</ul>
+
+<h2 id="or-browse-by-category">Ou Procure por Categorias&hellip;</h2>
+   <ul id="tagcloud">
+    <li><a href="https://based.cooking/tags/alcohol" id="tag_alcohol">Bollela</a></li>
+    <li><a href="https://based.cooking/tags/asian" id="tag_asian">Rodrigo</a></li>
+    <li><a href="https://based.cooking/tags/american" id="tag_american">Rafael</a></li>
+    <li><a href="https://based.cooking/tags/argentinian" id="tag_argentinian">Professores FAAP</a></li>
+    </ul>
+
+</article>
+
+</article>
+</main>
+<footer>
+    <p>Footer</p>
+</footer>
+</body>
+</html>
+
